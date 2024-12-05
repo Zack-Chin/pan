@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import './RickyIndividual.css';
+import './ricky.css';
 import {Link} from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -10,7 +10,7 @@ export default function RickyIndividual() {
     const navigate = useNavigate()
     const [ esLoading, setEsLoading] = useState(true)
 
-    fetch(https://rickandmortyapi.com/api/character/${id})
+    fetch(`https://rickandmortyapi.com/api/character/${id}`)
       .then(response => response.json())//la respuesta del link/fetch la convierte un un json
       .then((response) => {
         setIndividual(response)//lo guarda en el array individual
@@ -35,7 +35,7 @@ export default function RickyIndividual() {
             <p>Genero: {individual.gender}</p>
             <p>Especie: {individual.species}</p>
             <div className='boto'>
-                <Link to={'/Rick'}><button>Regresar</button></Link>
+                <center><Link to={'/Rick'}><button>Regresar</button></Link></center>
             </div>
         </div>
     </div>
